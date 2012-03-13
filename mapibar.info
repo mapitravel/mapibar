@@ -1,0 +1,9 @@
+; $Id$
+name = Machupicchu Bar
+description = Shows a contact bar exclusively for Machupicchu Travel
+core = 7.x
+
+configure = admin/mapitravel/mapibar
+
+package = "Machupicchu Travel"
+version = "7.x-0.1alpha"

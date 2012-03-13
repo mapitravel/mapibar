@@ -1,0 +1,107 @@
+/* $Id:  $ */
+#contact-bar {
+	background: url(images/bg_contactbar.png) repeat-x;
+	height: 54px;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	z-index: 2.22222e+008 !important;
+	font: bold 13px Tahoma, Geneva, sans-serif;
+}
+#contact-bar ul {
+	border-left: 1px solid #386e70;
+	border-right: 1px solid #386e70;
+	height: 50px;
+}
+#contact-bar li {
+	color: #386e70;
+	text-shadow: #f2f2f2 1px 1px 0px;
+	float: left;
+	margin: 0;
+	list-style-type: none;
+	text-align: center;
+	height: 40px;
+	display: block;
+	padding-left: 50px;
+	padding-right: 15px;
+	border-right: 1px solid #386e70;
+	cursor: pointer;
+}
+#contact-bar a {
+	color: #386e70;
+}
+#contact-bar li:hover {
+	color: #398b8e;
+}
+#contact-bar li.last {
+	border-right: none !important;
+}
+#cb-chat {
+	background: url(images/bg_contactbar_special.png) repeat-x;
+	color: #35391f !important;
+	padding: 0 0 10px 0 !important;
+}
+#cb-chat div {
+	background: url(images/cb-icon-chat.gif) no-repeat 0 3px;
+	padding: 8px 15px 815px 50px !important;
+}
+#cb-skype {
+	background: url(images/cb-icon-skype.png) no-repeat 0 4px;
+	padding-top: 8px !important;
+}
+#cb-call {
+	background: url(images/cb-icon-call.png) no-repeat 0 4px;
+	height: 48px !important;
+	font-size: 14px;
+	color: #000 !important;
+}
+#cb-mail {
+	/*background: url(images/cb-icon-mail.png) no-repeat 0 4px;*/
+	height: 48px !important;
+	cursor: text !important;
+	padding-left: 15px !important;
+	text-shadow: none !important;
+}
+#cb-langs {
+	height: 38px !important;
+	padding-left: 15px !important;
+	text-align: left !important;
+	line-height: 17px !important;
+	font-size: 11px !important;
+}
+#contact-bar li span {
+	font-size: 11px;
+	margin: 0;
+	padding: 0;
+	color: #ea5b03 !important;
+}
+
+/* Idiomas */
+.idiomas {
+	text-align:left;
+	padding-top:10px;
+	margin-left:10px;
+}
+.idiomas em {
+	padding:2px 2px 2px 28px;
+	font-style: normal;
+}
+.idiomas em a {
+	color:#9F5417;
+}
+.idiomas em.ban_en {
+	background: url(images/ban_en.png) no-repeat;
+}
+.idiomas em.ban_br {
+	background: url(images/ban_br.png) no-repeat;
+}
+.idiomas em.ban_es {
+	background: url(images/ban_es.png) no-repeat;
+}
+/* For Mapi2012 Theme */
+#main {
+	padding-top: 50px;
+}
+.page-admin #contact-bar {
+	display: none !important;
+}

@@ -1,0 +1,16 @@
+<?php
+// $Id:
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function mapibar_uninstall() {
+  // Delete menu links.
+  menu_cache_clear_all();
+  // Delete variables.
+  variable_del('mapibar_mail');
+  variable_del('mapibar_chat');
+  variable_del('mapibar_skype');
+  variable_del('mapibar_width');
+}
+

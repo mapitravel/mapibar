@@ -1,4 +1,3 @@
-/* $Id:  $ */
 #contact-bar {
 	background: url(images/bg_contactbar.png) repeat-x;
 	height: 54px;
@@ -52,7 +51,7 @@
 #cb-call {
 	background: url(images/cb-icon-call.png) no-repeat 0 4px;
 	height: 48px !important;
-	font-size: 14px;
+	font-size: 13px;
 	color: #000 !important;
 }
 #cb-mail {

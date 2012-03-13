@@ -1,5 +1,4 @@
 <?php
-// $Id$
 /**
 * Permisos
 * @return array An array of valid permissions for the mapibar module
@@ -37,16 +36,16 @@ function mapibar_menu() {
 * Init
 */
 function mapibar_init() {
-  	$path = drupal_get_path('module', 'mapibar');
+    $path = drupal_get_path('module', 'mapibar');
     drupal_add_css($path .'/mapibar.css');
     drupal_add_js($path .'/mapibar.js');
     if ($setting = variable_get('mapibar_width', 960)) {
       drupal_add_js(array('mapibar' => array('width' => $setting)), 'setting');
     }
-	if ($setting = variable_get('mapibar_chat', 'http://media.perunoticias.net/html/machupicchu.html')) {
+    if ($setting = variable_get('mapibar_chat', '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/chats/chat.php')) {
       drupal_add_js(array('mapibar' => array('chat' => $setting)), 'setting');
     }
-	if ($setting = variable_get('mapibar_skype', 'http://media.perunoticias.net/html/skype.html')) {
+    if ($setting = variable_get('mapibar_skype', '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/chats/skype.php')) {
       drupal_add_js(array('mapibar' => array('skype' => $setting)), 'setting');
     }
 } // function mapibar_init()
@@ -56,47 +55,86 @@ function mapibar_init() {
 */
 function mapibar_admin() {
   $form = array();
-  $form['mapibar_mail'] = array(
+  
+  $form['contact'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Contact'),
+      '#collapsible' => TRUE,
+      '#collapsed' => FALSE,
+  );
+  
+  $form['variables'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Settings'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+  );
+  
+  $form['contact']['mapibar_mail'] = array(
     '#type' => 'textfield',
-    '#title' => t('Main e-mail'),
-    '#size' => 30,
-	'#default_value' => variable_get('mapibar_mail', 'info@machupicchu.biz'),
-    '#maxlength' => 100,
-    '#description' => t("This value appears in the contact bar."),
+    '#title' => t('E-mails'),
+    '#default_value' => variable_get('mapibar_mail', 'info@machupicchu.biz,machupicchutravel@hotmail.com'),
+    '#description' => t("Only two mails, separated by commas and no spaces."),
     '#required' => TRUE,
   );
   
-  $form['mapibar_chat'] = array(
+  $form['contact']['mapibar_phones'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Phones'),
+    '#default_value' => variable_get('mapibar_phones', '+0051-84-264242,+0051-84-223010'),
+    '#description' => t("Only two phones, separated by commas and no spaces."),
+    '#required' => TRUE,
+  );
+  
+  $form['variables']['mapibar_chat'] = array(
     '#type' => 'textfield',
     '#title' => t('URL for Chat window '),
     '#size' => 60,
-	'#default_value' => variable_get('mapibar_chat', 'http://media.perunoticias.net/html/machupicchu.html'),
+    '#default_value' => variable_get('mapibar_chat', '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/chats/chat.php'),
     '#maxlength' => 300,
     '#required' => TRUE,
   );
   
-  $form['mapibar_skype'] = array(
+  $form['variables']['mapibar_skype'] = array(
     '#type' => 'textfield',
     '#title' => t('URL for Skype window'),
     '#size' => 60,
-	'#default_value' => variable_get('mapibar_skype', 'http://media.perunoticias.net/html/skype.html'),
+    '#default_value' => variable_get('mapibar_skype', '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/chats/skype.php'),
     '#maxlength' => 300,
     '#required' => TRUE,
   );
   
-  $form['mapibar_width'] = array(
+  $form['variables']['mapibar_width'] = array(
     '#type' => 'textfield',
     '#title' => t('The bar width in px'),
     '#size' => 10,
-	'#default_value' => variable_get('mapibar_width', 960),
+    '#default_value' => variable_get('mapibar_width', 960),
     '#maxlength' => 4,
     '#required' => TRUE,
   );
   
   return system_settings_form($form);
 } // function mapibar_admin()
+
+/**
+ * 
+ * @param 
+ *  type $var lo que se va a juntar
+ * @return 
+ *  string lo juntado
+ */
+function mapibar_joiner($var) {
+    $var = explode(',', $var);
+    $var = implode("<br />", $var);
+    return $var;
+}
+
+/**
+ * The bar
+ */
 function mapibar_page_build(&$page) {
 	global $language;
+        
 	$output = '
 		<div id="contact-bar"> 
 		  <ul> 
@@ -104,13 +142,13 @@ function mapibar_page_build(&$page) {
 			  <div> ' . t('Chat with us<br /> 24/7') . ' </div>
 			</li> 
 			<li id="cb-mail"> <span>' . t('Book 24 hours') . '</span><br /> ';
-			  $output .= variable_get('mapibar_mail', 'info@machupicchu.biz');
+			  $output .= mapibar_joiner(variable_get('mapibar_mail'));
 			  $output .= '<br /> 
 			  machupicchutravel@hotmail.com </li> 
-			<li id="cb-call"> <span>' . t('Book 24 hours') . '</span><br /> 
-			  +0051-84-264242<br /> 
-			  +0051-84-223010 </li> 
-			<li id="cb-skype"> ' . t('Call us for FREE<br /> 24/7') . '</li> 
+			<li id="cb-call"> <span>' . t('Book 24 hours') . '</span><br />';
+                            $output .= mapibar_joiner(variable_get('mapibar_phones'));
+                        $output .= '</li> 
+			<li id="cb-skype">'  . t('Call us for FREE<br /> 24/7') . '</li> 
 			<li id="cb-langs" class="idiomas last">';
 			
 			switch($language->language) {

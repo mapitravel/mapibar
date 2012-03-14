@@ -1,4 +1,35 @@
 <?php
+
+/**
+ * The current theme path 
+ */
+define('MAPIBAR_THEME_PATH', '/' . drupal_get_path('theme', variable_get('theme_default', NULL)));
+
+/**
+ * Ancho de la barra
+ */
+define('MAPIBAR_WIDTH', 960);
+
+/**
+ * Ventana de Chat
+ */
+define('MAPIBAR_CHAT', MAPIBAR_THEME_PATH . '/chats/chat.php');
+
+/**
+ * Ventana de Skype
+ */
+define('MAPIBAR_SKYPE', MAPIBAR_THEME_PATH . '/chats/skype.php');
+
+/**
+ * Emails
+ */
+define('MAPIBAR_MAIL', 'info@machupicchu.biz,machupicchutravel@hotmail.com');
+
+/**
+ * Phones
+ */
+define('MAPIBAR_PHONES', '+0051-84-264242,+0051-84-223010');
+
 /**
 * Permisos
 * @return array An array of valid permissions for the mapibar module
@@ -39,13 +70,13 @@ function mapibar_init() {
     $path = drupal_get_path('module', 'mapibar');
     drupal_add_css($path .'/mapibar.css');
     drupal_add_js($path .'/mapibar.js');
-    if ($setting = variable_get('mapibar_width')) {
+    if ($setting = variable_get('mapibar_width', MAPIBAR_WIDTH)) {
       drupal_add_js(array('mapibar' => array('width' => $setting)), 'setting');
     }
-    if ($setting = variable_get('mapibar_chat')) {
+    if ($setting = variable_get('mapibar_chat', MAPIBAR_CHAT)) {
       drupal_add_js(array('mapibar' => array('chat' => $setting)), 'setting');
     }
-    if ($setting = variable_get('mapibar_skype')) {
+    if ($setting = variable_get('mapibar_skype', MAPIBAR_SKYPE)) {
       drupal_add_js(array('mapibar' => array('skype' => $setting)), 'setting');
     }
 } // function mapibar_init()
@@ -99,7 +130,7 @@ function mapibar_admin() {
   $form['contact']['mapibar_mail'] = array(
     '#type' => 'textfield',
     '#title' => t('E-mails'),
-    '#default_value' => variable_get('mapibar_mail'),
+    '#default_value' => variable_get('mapibar_mail', MAPIBAR_MAIL),
     '#description' => t("Only two mails, separated by commas and no spaces."),
     '#required' => TRUE,
   );
@@ -107,7 +138,7 @@ function mapibar_admin() {
   $form['contact']['mapibar_phones'] = array(
     '#type' => 'textfield',
     '#title' => t('Phones'),
-    '#default_value' => variable_get('mapibar_phones'),
+    '#default_value' => variable_get('mapibar_phones', MAPIBAR_PHONES),
     '#description' => t("Only two phones, separated by commas and no spaces."),
     '#required' => TRUE,
   );
@@ -117,7 +148,7 @@ function mapibar_admin() {
     '#type' => 'textfield',
     '#title' => t('URL for Chat window'),
     '#size' => 60,
-    '#default_value' => variable_get('mapibar_chat'),
+    '#default_value' => variable_get('mapibar_chat', MAPIBAR_CHAT),
     '#maxlength' => 300,
     '#required' => TRUE,
   );
@@ -126,7 +157,7 @@ function mapibar_admin() {
     '#type' => 'textfield',
     '#title' => t('URL for Skype window'),
     '#size' => 60,
-    '#default_value' => variable_get('mapibar_skype'),
+    '#default_value' => variable_get('mapibar_skype', MAPIBAR_SKYPE),
     '#maxlength' => 300,
     '#required' => TRUE,
   );
@@ -135,7 +166,7 @@ function mapibar_admin() {
     '#type' => 'textfield',
     '#title' => t('The bar width in px'),
     '#size' => 10,
-    '#default_value' => variable_get('mapibar_width'),
+    '#default_value' => variable_get('mapibar_width', MAPIBAR_WIDTH),
     '#maxlength' => 4,
     '#required' => TRUE,
   );
@@ -207,9 +238,9 @@ function mapibar_page_build(&$page) {
 			<li id="cb-langs" class="idiomas last">', 
                                 t('Chat with us<br /> 24/7'), 
                                 t('Book 24 hours'),
-                                mapibar_joiner(variable_get('mapibar_mail')),
+                                mapibar_joiner(variable_get('mapibar_mail', MAPIBAR_MAIL)),
                                 t('Book 24 hours'),
-                                mapibar_joiner(variable_get('mapibar_phones')),
+                                mapibar_joiner(variable_get('mapibar_phones', MAPIBAR_PHONES)),
                                 t('Call us for FREE<br /> 24/7'));
 			
 			switch($language->language) {

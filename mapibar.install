@@ -1,5 +1,18 @@
 <?php
-// $Id:
+
+/**
+ * Implements hook_install().
+ */
+function mapibar_install() {
+  // Set some default variables necessary for the module to perform.
+  $theme_path = '/' . drupal_get_path('theme', variable_get('theme_default', NULL));
+    
+  variable_set('mapibar_mail', 'info@machupicchu.biz,machupicchutravel@hotmail.com');
+  variable_set('mapibar_phones', '+0051-84-264242,+0051-84-223010');
+  variable_set('mapibar_chat', $theme_path . '/chats/chat.php');
+  variable_set('mapibar_skype', $theme_path . '/chats/skype.php');
+  variable_set('mapibar_width', 960);
+}
 
 /**
  * Implementation of hook_uninstall().

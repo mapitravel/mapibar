@@ -1,6 +1,6 @@
 # $Id$
 #
-# Spanish translation of Drupal (general)
+# LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  mapibar.module: n/a
@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2009-11-09 10:16+0100\n"
+"POT-Creation-Date: 2012-03-14 09:51-0500\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -19,51 +19,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: mapibar.module:15
-msgid "Shows a contact bar exclusively for Machupicchu Travel"
+#: mapibar.module:8
+msgid "Administer values for Mapibar"
 msgstr ""
 
-#: mapibar.module:39
-msgid "Main e-mail"
+#: mapibar.module:101
+msgid "E-mails"
 msgstr ""
 
-#: mapibar.module:43
-msgid "This value appears in the contact bar."
+#: mapibar.module:103
+msgid "Only two mails, separated by commas and no spaces."
 msgstr ""
 
-#: mapibar.module:49
-msgid "URL for Chat window "
+#: mapibar.module:109
+msgid "Phones"
 msgstr ""
 
-#: mapibar.module:58
-msgid "URL for Skype window"
-msgstr ""
-
-#: mapibar.module:67
-msgid "The bar width in px"
-msgstr ""
-
-#: mapibar.module:81
-msgid "You must enter an integer."
-msgstr ""
-
-#: mapibar.module:84
-msgid "Maximum number of links must than 500px."
-msgstr ""
-
-#: mapibar.module:98
-msgid "Config values for Mapibar"
+#: mapibar.module:111
+msgid "Only two phones, separated by commas and no spaces."
 msgstr ""
 
 #: mapibar.module:118
-msgid "Chat with us<br /> 24/7"
-msgstr ""
-
-#: mapibar.module:120;124
-msgid "Book 24 hours"
+msgid "URL for Chat window"
 msgstr ""
 
 #: mapibar.module:127
+msgid "URL for Skype window"
+msgstr ""
+
+#: mapibar.module:136
+msgid "The bar width in px"
+msgstr ""
+
+#: mapibar.module:146
+msgid "URL for english site (Optional)"
+msgstr ""
+
+#: mapibar.module:151
+msgid "Title for url in english (Optional)"
+msgstr ""
+
+#: mapibar.module:157
+msgid "URL for portuguese site (Optional)"
+msgstr ""
+
+#: mapibar.module:162
+msgid "Title for url in portuguese (Optional)"
+msgstr ""
+
+#: mapibar.module:168
+msgid "URL for spanish site (Optional)"
+msgstr ""
+
+#: mapibar.module:173
+msgid "Title for url in spanish (Optional)"
+msgstr ""
+
+#: mapibar.module:208
+msgid "Chat with us<br /> 24/7"
+msgstr ""
+
+#: mapibar.module:209;211
+msgid "Book 24 hours"
+msgstr ""
+
+#: mapibar.module:213
 msgid "Call us for FREE<br /> 24/7"
 msgstr ""
 
+#: mapibar.module:20
+msgid "All modules for Machupicchu Travel"
+msgstr ""
+
+#: mapibar.module:27
+msgid "Config values for Mapibar"
+msgstr ""
+
+#: mapibar.info:0
+msgid "Shows a contact bar exclusively for Machupicchu Travel"
+msgstr ""

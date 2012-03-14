@@ -6,4 +6,4 @@ core = 7.x
 configure = admin/mapitravel/mapibar
 
 package = "Machupicchu Travel"
-version = "7.x-0.1alpha"
+version = "7.x-0.5beta"

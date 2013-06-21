@@ -86,6 +86,10 @@ msgstr "Reserve las 24 horas"
 msgid "Call us for FREE<br /> 24/7"
 msgstr "Llámanos GRATIS<br /> las 24 horas del día"
 
+#: mapibar.module:213
+msgid "Call us for FREE<br /> NOW!"
+msgstr "¡Llámanos GRATIS<br /> ahora!"
+
 #: mapibar.module:20
 msgid "All modules for Machupicchu Travel"
 msgstr "Todos los módulos para Machupicchu Travel"

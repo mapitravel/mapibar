@@ -1,0 +1,32 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css");
+.header,
+.body {
+    padding: 10px 20px;
+}
+.header {
+    background: #749536;
+    border-bottom: 1px solid #394A1B;
+    color: #FFF;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0,0,0, 0.6);
+}
+
+.body {
+    padding-top: 30px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.icon {
+    color: yellow;
+}
+
+.pure-button {
+    text-shadow: 1px 1px 1px rgba(0,0,0, 0.6);
+}

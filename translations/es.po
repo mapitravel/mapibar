@@ -46,6 +46,10 @@ msgstr "URL para la ventana de chat"
 msgid "URL for Skype window"
 msgstr "URL para la ventana de Skype"
 
+#: mapibar.module:175
+msgid "URL for call free window"
+msgstr "URL para la ventana de llamada"
+
 #: mapibar.module:136
 msgid "The bar width in px"
 msgstr "El ancho de la barra en px"
@@ -85,6 +89,10 @@ msgstr "Reserve las 24 horas"
 #: mapibar.module:213
 msgid "Call us for FREE<br /> 24/7"
 msgstr "Llámanos GRATIS<br /> las 24 horas del día"
+
+#: mapibar.module:213
+msgid "Call us for FREE<br /> NOW!"
+msgstr "¡Llámanos GRATIS<br /> ahora!"
 
 #: mapibar.module:20
 msgid "All modules for Machupicchu Travel"

@@ -1,4 +1,7 @@
 @import url("//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css");
+a {
+    color: #0078e7;
+}
 .header,
 .body {
     padding: 10px 20px;
@@ -17,6 +20,12 @@
 
 .body {
     padding-top: 30px;
+}
+
+.middle {
+    padding: 2px;
+    background: #eee;
+    border-bottom: 1px solid #cdcdcd;
 }
 
 .align-center {

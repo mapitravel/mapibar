@@ -7,7 +7,7 @@
 			var cbwCall = Drupal.settings.mapibar.call;
 			var cbWidth = Drupal.settings.mapibar.width;
 			$('#cb-chat').popup(paramsChat, cbwChat);
-			$('#cb-skype').popup('location=0,status=0,scrollbars=0,width=750,height=350', cbwCall);
+			$('#cb-skype').popup('location=0,status=0,scrollbars=0,width=750,height=400', cbwCall);
 			$('#cb-call').popup(paramsSkype, cbwSkype);
 			
 			

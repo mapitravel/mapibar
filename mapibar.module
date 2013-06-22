@@ -241,7 +241,7 @@ function mapibar_page_build(&$page) {
                                 mapibar_joiner(variable_get('mapibar_mail', MAPIBAR_MAIL)),
                                 t('Book 24 hours'),
                                 mapibar_joiner(variable_get('mapibar_phones', MAPIBAR_PHONES)),
-                                t('Call us for FREE<br /> 24/7'));
+                                t('Call us for FREE<br /> NOW!'));
 			
 			switch($language->language) {
 				case 'es':

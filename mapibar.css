@@ -45,8 +45,9 @@
 	padding: 8px 15px 815px 50px !important;
 }
 #cb-skype {
-	background: url(images/cb-icon-skype.png) no-repeat 0 4px;
+	/*background: url(images/cb-icon-skype.png) no-repeat 0 4px;*/
 	padding-top: 8px !important;
+	padding-left: 15px !important;
 }
 #cb-call {
 	background: url(images/cb-icon-call.png) no-repeat 0 4px;

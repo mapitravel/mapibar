@@ -4,6 +4,7 @@
  * The current theme path 
  */
 define('MAPIBAR_THEME_PATH', '/' . drupal_get_path('theme', variable_get('theme_default', NULL)));
+define('MAPIBAR_MODULE_PATH', '/sites/all/modules/mapibar');
 
 /**
  * Ancho de la barra
@@ -19,6 +20,11 @@ define('MAPIBAR_CHAT', MAPIBAR_THEME_PATH . '/chats/chat.php');
  * Ventana de Skype
  */
 define('MAPIBAR_SKYPE', MAPIBAR_THEME_PATH . '/chats/skype.php');
+
+/**
+ * Ventana de Llamada
+ */
+define('MAPIBAR_CALL', MAPIBAR_MODULE_PATH . '/static/llamada.php');
 
 /**
  * Emails
@@ -78,6 +84,9 @@ function mapibar_init() {
     }
     if ($setting = variable_get('mapibar_skype', MAPIBAR_SKYPE)) {
       drupal_add_js(array('mapibar' => array('skype' => $setting)), 'setting');
+    }
+    if ($setting = variable_get('mapibar_call', MAPIBAR_CALL)) {
+      drupal_add_js(array('mapibar' => array('call' => $setting)), 'setting');
     }
 } // function mapibar_init()
 /**
@@ -161,6 +170,15 @@ function mapibar_admin() {
     '#maxlength' => 300,
     '#required' => TRUE,
   );
+
+  $form['variables']['mapibar_call'] = array(
+    '#type' => 'textfield',
+    '#title' => t('URL for call free window'),
+    '#size' => 60,
+    '#default_value' => variable_get('mapibar_call', MAPIBAR_CALL),
+    '#maxlength' => 300,
+    '#required' => TRUE,
+  );
   
   $form['variables']['mapibar_width'] = array(
     '#type' => 'textfield',
@@ -241,7 +259,7 @@ function mapibar_page_build(&$page) {
                                 mapibar_joiner(variable_get('mapibar_mail', MAPIBAR_MAIL)),
                                 t('Book 24 hours'),
                                 mapibar_joiner(variable_get('mapibar_phones', MAPIBAR_PHONES)),
-                                t('Call us for FREE<br /> 24/7'));
+                                t('Call us for FREE<br /> NOW!'));
 			
 			switch($language->language) {
 				case 'es':

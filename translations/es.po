@@ -46,6 +46,10 @@ msgstr "URL para la ventana de chat"
 msgid "URL for Skype window"
 msgstr "URL para la ventana de Skype"
 
+#: mapibar.module:175
+msgid "URL for call free window"
+msgstr "URL para la ventana de llamada"
+
 #: mapibar.module:136
 msgid "The bar width in px"
 msgstr "El ancho de la barra en px"
